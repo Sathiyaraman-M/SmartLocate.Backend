@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Kubernetes;
 using SmartLocate.Infrastructure.Commons.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +18,14 @@ builder.Configuration
 
 builder.Services.AddJwtAuthentication(builder.Configuration);
 
-builder.Services.AddOcelot();
+if(builder.Environment.EnvironmentName == Environments.Development)
+{
+    builder.Services.AddOcelot(builder.Configuration);
+}
+else
+{
+    builder.Services.AddOcelot(builder.Configuration).AddKubernetes();
+}
 
 builder.Services.AddControllers();
 

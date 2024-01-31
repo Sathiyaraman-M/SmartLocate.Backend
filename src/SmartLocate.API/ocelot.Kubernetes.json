@@ -1,0 +1,183 @@
+{
+  "Routes": [
+    /** Buses **/
+    {
+      "UpstreamPathTemplate": "/buses",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamPathTemplate": "/api/buses",
+      "DownstreamScheme": "http",
+      "ServiceName": "buses",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "SwaggerKey": "Bus"
+    },
+    {
+      "UpstreamPathTemplate": "/buses/{id}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "DownstreamPathTemplate": "/api/buses/{id}",
+      "DownstreamScheme": "http",
+      "ServiceName": "buses",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "SwaggerKey": "Bus"
+    },
+    /** Bus Routes **/
+    {
+      "UpstreamPathTemplate": "/bus-routes",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamPathTemplate": "/api/bus-routes",
+      "DownstreamScheme": "http",
+      "ServiceName": "busroutes",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "SwaggerKey": "BusRoute"
+    }, 
+    {
+      "UpstreamPathTemplate": "/bus-routes/{id}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "DownstreamPathTemplate": "/api/bus-routes/{id}",
+      "DownstreamScheme": "http",
+      "ServiceName": "busroutes",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "SwaggerKey": "BusRoute"
+    },
+    /** Students **/
+    {
+      "UpstreamPathTemplate": "/students",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamPathTemplate": "/api/students",
+      "DownstreamScheme": "http",
+      "ServiceName": "students",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "SwaggerKey": "Student"
+    }, 
+    {
+      "UpstreamPathTemplate": "/students/{id}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "DownstreamPathTemplate": "/api/students/{id}",
+      "DownstreamScheme": "http",
+      "ServiceName": "students",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "SwaggerKey": "Student"
+    }, 
+    {
+      "UpstreamPathTemplate": "/students/{id}/activation-status",
+      "UpstreamHttpMethod": ["GET"],
+      "DownstreamPathTemplate": "/api/students/{id}/activation-status",
+      "DownstreamScheme": "http",
+      "ServiceName": "students",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "SwaggerKey": "Student"
+    },
+    /** Identity **/
+    {
+      "UpstreamPathTemplate": "/identity/students/{everything}",
+      "UpstreamHttpMethod": ["POST"],
+      "DownstreamPathTemplate": "/api/identity/students/{everything}",
+      "DownstreamScheme": "http",
+      "ServiceName": "identity",
+      "SwaggerKey": "Identity"
+    }, 
+    {
+      "UpstreamPathTemplate": "/identity/bus-drivers/{everything}",
+      "UpstreamHttpMethod": ["POST"],
+      "DownstreamPathTemplate": "/api/identity/bus-drivers/{everything}",
+      "DownstreamScheme": "http",
+      "ServiceName": "identity",
+      "SwaggerKey": "Identity"
+    }, 
+    {
+      "UpstreamPathTemplate": "/identity/admin-users/{everything}",
+      "UpstreamHttpMethod": ["POST"],
+      "DownstreamPathTemplate": "/api/identity/admin-users/{everything}",
+      "DownstreamScheme": "http",
+      "ServiceName": "identity",
+      "SwaggerKey": "Identity"
+    },
+    /** Bus Drivers **/
+    {
+      "UpstreamPathTemplate": "/bus-drivers",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamPathTemplate": "/api/bus-drivers",
+      "DownstreamScheme": "http",
+      "ServiceName": "busdrivers",
+      "SwaggerKey": "BusDriver",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }, 
+    {
+      "UpstreamPathTemplate": "/bus-drivers/{id}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "DownstreamPathTemplate": "/api/bus-drivers/{id}",
+      "DownstreamScheme": "http",
+      "ServiceName": "busdrivers",
+      "SwaggerKey": "BusDriver",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }, 
+    {
+      "UpstreamPathTemplate": "/bus-drivers/{id}/activation-status",
+      "UpstreamHttpMethod": ["GET"],
+      "DownstreamPathTemplate": "/api/bus-drivers/{id}/activation-status",
+      "DownstreamScheme": "http",
+      "ServiceName": "busdrivers",
+      "SwaggerKey": "BusDriver",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    /** Admin Users **/
+    {
+      "UpstreamPathTemplate": "/admin-users",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamPathTemplate": "/api/admin",
+      "DownstreamScheme": "http",
+      "ServiceName": "adminusers",
+      "SwaggerKey": "Admin",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }, 
+    {
+      "UpstreamPathTemplate": "/admin-users/{id}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "DownstreamPathTemplate": "/api/admin/{id}",
+      "DownstreamScheme": "http",
+      "ServiceName": "adminusers",
+      "SwaggerKey": "Admin",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }, 
+    {
+      "UpstreamPathTemplate": "/admin-users/{id}/activation-status",
+      "UpstreamHttpMethod": ["GET"],
+      "DownstreamPathTemplate": "/api/admin/{id}/activation-status",
+      "DownstreamScheme": "http",
+      "ServiceName": "adminusers",
+      "SwaggerKey": "Admin",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Type": "kube",
+      "Namespace": "default"
+    }
+  }
+}

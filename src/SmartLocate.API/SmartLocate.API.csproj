@@ -13,6 +13,7 @@
     <ItemGroup>        
         <PackageReference Include="MMLib.SwaggerForOcelot" />
         <PackageReference Include="Ocelot" />
+        <PackageReference Include="Ocelot.Provider.Kubernetes" />
     </ItemGroup>
     
     <ItemGroup>
