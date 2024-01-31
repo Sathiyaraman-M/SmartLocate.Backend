@@ -11,7 +11,8 @@ builder.Services.AddProblemDetails();
 
 builder.Configuration
     .SetBasePath(builder.Environment.ContentRootPath)
-    .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"ocelot.{builder.Environment.EnvironmentName}.json", optional: false, reloadOnChange: true)
+    .AddOcelot(builder.Environment)
     .AddEnvironmentVariables();
 
 builder.Services.AddJwtAuthentication(builder.Configuration);
